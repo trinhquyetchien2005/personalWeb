@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trịnh Quyết Chiến - Portfolio</title>
+  <link href="styles.css" rel="stylesheet">
+  <style>
+    /* Reset một số kiểu mặc định */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+      padding-top: 80px; /* Khoảng cách đầu trang */
+    }
+
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav-links li {
+      margin: 0 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #1abc9c;
+    }
+
+    /* About Section */
+    .about {
+      background-color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .avatar {
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      margin-right: 40px;
+      border: 4px solid #1abc9c;
+    }
+
+    .about-text {
+      max-width: 700px;
+    }
+
+    .about h2 {
+      font-size: 32px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      font-size: 18px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Timeline Section */
+    .timeline {
+      background-color: #f9f9f9;
+      padding: 60px 20px;
+    }
+
+    .timeline h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .timeline-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .timeline-item {
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin-bottom: 30px;
+      width: 80%;
+      max-width: 700px;
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .timeline-item h3 {
+      font-size: 28px;
+      color: #1abc9c;
+      margin-bottom: 15px;
+    }
+
+    .timeline-item p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    /* Contact Section */
+    .contact {
+      background-color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #1abc9c;
+    }
+
+    button {
+      background-color: #1abc9c;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #16a085;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .footer p {
+      font-size: 16px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about {
+        padding: 80px 20px;
+      }
+
+      .container {
+        flex-direction: column;
+      }
+
+      .avatar {
+        object-fit: cover;
+      }
+
+      .timeline-container {
+        flex-direction: column;
+      }
+
+      .timeline-item {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <h1 class="logo">Trịnh Quyết Chiến</h1>
+      <ul class="nav-links">
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#timeline">Hành trình</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about" class="about">
+    <div class="container">
+      <img src="me.jpg" alt="Avatar" class="avatar">
+      <div class="about-text">
+        <h2>Xin chào, tôi là Trịnh Quyết Chiến</h2>
+        <p>Tôi 18 tuổi, đến từ Thanh Hóa và có đam mê trở thành một lập trình viên chuyên nghiệp. Tôi yêu thích công nghệ và luôn mong muốn sáng tạo những sản phẩm mang lại giá trị cho cộng đồng. Tôi đã bắt đầu học lập trình từ năm 2022 và hiện tại đang tiếp tục nâng cao kỹ năng qua các dự án thực tế.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline" class="timeline">
+    <h2>Hành trình phát triển</h2>
+    <div class="timeline-container">
+      <div class="timeline-item">
+        <h3>2022</h3>
+        <p>Bắt đầu học lập trình và làm quen với HTML, CSS, JavaScript. Tạo các dự án nhỏ để nâng cao kỹ năng và khám phá thế giới lập trình web.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>2023</h3>
+        <p>Tìm hiểu về các framework như Vue.js và Tailwind CSS. Tham gia các khóa học trực tuyến và xây dựng các dự án thực tế với Vue.js để cải thiện khả năng phát triển web động.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>2024</h3>
+        <p>Bắt đầu phát triển các dự án cá nhân và xây dựng portfolio cá nhân để giới thiệu khả năng lập trình. Tôi cũng đang khám phá thêm về các công nghệ mới như Node.js và MongoDB để áp dụng vào các dự án sau này.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Liên hệ với tôi</h2>
+    <form>
+      <input type="text" placeholder="Tên của bạn" required>
+      <input type="email" placeholder="Email của bạn" required>
+      <textarea placeholder="Nội dung tin nhắn" required></textarea>
+      <button type="submit">Gửi</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2024 Trịnh Quyết Chiến. All rights reserved.</p>
+  </footer>
+</body>
+</html>
